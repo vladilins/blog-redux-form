@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import promise from "redux-promise";
 
 import reducers from "./reducers";
@@ -20,8 +20,10 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
-        <Route path="/" component={PostIndex}></Route>
-        <Route path="/posts/new" component={PostNew}></Route>
+        <Switch>
+          <Route path="/posts/new" component={PostNew}></Route>
+          <Route path="/" component={PostIndex}></Route>
+        </Switch>
       </div>
     </Router>
   </Provider>,
