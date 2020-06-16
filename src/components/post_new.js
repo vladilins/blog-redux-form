@@ -7,13 +7,20 @@ export class PostNew extends Component {
       <div className="form-group">
         <label>{field.label}</label>
         <input type="text" className="form-control" {...field.input} />
+        {field.meta.error}
       </div>
     );
   }
 
+  onSubmit(values) {
+    console.log(values);
+  }
+
   render() {
+    const { handleSubmit } = this.props;
+
     return (
-      <form>
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <Field name="title" label="Title" component={this.renderField}></Field>
         <Field
           name="categories"
@@ -25,6 +32,7 @@ export class PostNew extends Component {
           label="Post Content"
           component={this.renderField}
         ></Field>
+        <button className="btn btn-primary">Submit</button>
       </form>
     );
   }
