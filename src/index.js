@@ -2,9 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import App from "./components/app";
 import reducers from "./reducers";
+import PostIndex from "./components/posts_index";
 
 const composeEnhancers =
   process.env.NODE_ENV === "development"
@@ -15,7 +16,11 @@ const store = createStore(reducers, composeEnhancers(applyMiddleware()));
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <div>
+        <Route path="/" component={PostIndex}></Route>
+      </div>
+    </Router>
   </Provider>,
   document.querySelector(".container")
 );
