@@ -3,13 +3,18 @@ import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 
 export class PostNew extends Component {
+  renderTitleField(field) {
+    return (
+      <div>
+        <input type="text" {...field.input} />
+      </div>
+    );
+  }
+
   render() {
     return (
-      <form
-        action="
-    "
-      >
-        <Field name="title" component={}></Field>
+      <form>
+        <Field name="title" component={this.renderTitleField}></Field>
       </form>
     );
   }
