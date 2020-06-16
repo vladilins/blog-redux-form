@@ -7,6 +7,7 @@ import promise from "redux-promise";
 
 import reducers from "./reducers";
 import PostIndex from "./components/posts_index";
+import { PostNew } from "./components/post_new";
 
 const composeEnhancers =
   process.env.NODE_ENV === "development"
@@ -20,6 +21,7 @@ ReactDOM.render(
     <Router>
       <div>
         <Route path="/" component={PostIndex}></Route>
+        <Route path="/posts/new" component={PostNew}></Route>
       </div>
     </Router>
   </Provider>,
