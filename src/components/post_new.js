@@ -1,14 +1,20 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+
+import { Field, reduxForm } from "redux-form";
 
 export class PostNew extends Component {
   render() {
-    return <div>Post New</div>;
+    return (
+      <form
+        action="
+    "
+      >
+        <Field name="title" component={}></Field>
+      </form>
+    );
   }
 }
 
-const mapStateToProps = (state) => ({});
-
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(PostNew);
+export default reduxForm({
+  form: "PostsNewForm",
+})(PostNew);
