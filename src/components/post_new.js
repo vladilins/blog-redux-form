@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createPost } from "../actions/index";
 
-export class PostNew extends Component {
+class PostNew extends Component {
   renderField(field) {
     const {
       meta: { touched, error },

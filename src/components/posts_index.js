@@ -4,7 +4,7 @@ import { fetchPosts } from "../actions/index";
 import _ from "lodash";
 import { Link } from "react-router-dom";
 
-export class PostIndex extends Component {
+class PostIndex extends Component {
   componentDidMount() {
     this.props.fetchPosts();
   }

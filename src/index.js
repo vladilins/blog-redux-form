@@ -7,8 +7,8 @@ import promise from "redux-promise";
 
 import reducers from "./reducers";
 import PostIndex from "./components/posts_index";
-import { PostNew } from "./components/post_new";
-import { PostsShow } from "./components/posts_show";
+import PostNew from "./components/post_new";
+import PostsShow from "./components/posts_show";
 
 const composeEnhancers =
   process.env.NODE_ENV === "development"
