@@ -14,8 +14,10 @@ export const fetchPosts = (payload) => {
   };
 };
 
-export const createPost = (payload) => {
-  const request = axios.post(`${ROOT_URL}/posts/${API_KEY}`, payload);
+export const createPost = (payload, callback) => {
+  const request = axios
+    .post(`${ROOT_URL}/posts/${API_KEY}`, payload)
+    .then(() => callback());
 
   return { type: CREATE_POST, payload: request };
 };
