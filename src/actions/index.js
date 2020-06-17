@@ -17,14 +17,14 @@ export const fetchPosts = (payload) => {
 
 export const createPost = (payload, callback) => {
   const request = axios
-    .post(`${ROOT_URL}/posts/${API_KEY}`, payload)
+    .post(`${ROOT_URL}/posts${API_KEY}`, payload)
     .then(() => callback());
 
   return { type: CREATE_POST, payload: request };
 };
 
 export const fetchPost = (id) => {
-  const request = axios.get(`${ROOT_URL}/posts/${id}/${API_KEY}`);
+  const request = axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`);
 
   return { type: FETCH_POST, payload: request };
 };
